@@ -12,6 +12,17 @@ function App() {
         { studentId: '4', firstName: 'Nguyễn', lastName: 'Thị D' },
     ]
 
+    const handleAddStudent = () => {
+        alert('Thêm sinh viên')
+        const newStudent = {
+            studentId: '5',
+            firstName: 'Nguyễn',
+            lastName: 'Văn E'
+        }
+        console.log(newStudent);
+        student.push(newStudent);
+    }
+
     return (
         <div className="App">
             <div className='card'>
@@ -21,7 +32,9 @@ function App() {
 
                 <div className='card-header'>
                     <StudentsTable student={student} />
+                    <button className='btn btn-primary' onClick={handleAddStudent}>Thêm sinh viên</button>
                 </div>
+
             </div>
         </div>
     );
