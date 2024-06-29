@@ -3,6 +3,7 @@ import './App.css';
 import StudentItem from './component/StudentItem';
 import StudentsTable from './component/StudentsTable';
 import { useState } from 'react';
+import NewStudentFrom from './component/NewStudentFrom';
 
 function App() {
 
@@ -17,12 +18,12 @@ function App() {
 
 
 
-    const handleAddStudent = () => {
-        alert('Thêm sinh viên')
+    const handleAddStudent = (lastName, firstName) => {
+
         const newStudent = {
-            studentId: '5',
-            firstName: 'Nguyễn',
-            lastName: 'Văn E'
+            studentId: student.length + 1,
+            firstName: firstName,
+            lastName: lastName
         }
         setStudent([...student, newStudent])
     }
@@ -36,7 +37,7 @@ function App() {
 
                 <div className='card-header'>
                     <StudentsTable student={student} />
-                    <button className='btn btn-primary' onClick={handleAddStudent}>Thêm sinh viên</button>
+                    <NewStudentFrom handleAddStudent={handleAddStudent} />
                 </div>
 
             </div>
