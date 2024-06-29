@@ -2,15 +2,20 @@ import logo from './logo.svg';
 import './App.css';
 import StudentItem from './component/StudentItem';
 import StudentsTable from './component/StudentsTable';
+import { useState } from 'react';
 
 function App() {
 
-    const student = [
-        { studentId: '1', firstName: 'Nguyễn', lastName: 'Thị A' },
-        { studentId: '2', firstName: 'Nguyễn', lastName: 'Văn B' },
-        { studentId: '3', firstName: 'Nguyễn', lastName: 'Thị C' },
-        { studentId: '4', firstName: 'Nguyễn', lastName: 'Thị D' },
-    ]
+    const [student, setStudent] = useState
+        ([
+            { studentId: '1', firstName: 'Nguyễn', lastName: 'Thị A' },
+            { studentId: '2', firstName: 'Nguyễn', lastName: 'Văn B' },
+            { studentId: '3', firstName: 'Nguyễn', lastName: 'Thị C' },
+            { studentId: '4', firstName: 'Nguyễn', lastName: 'Thị D' },
+        ]
+        )
+
+
 
     const handleAddStudent = () => {
         alert('Thêm sinh viên')
@@ -19,8 +24,7 @@ function App() {
             firstName: 'Nguyễn',
             lastName: 'Văn E'
         }
-        console.log(newStudent);
-        student.push(newStudent);
+        setStudent([...student, newStudent])
     }
 
     return (
