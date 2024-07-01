@@ -35,7 +35,7 @@ function NewStudentFrom(props) {
             </div>
             <div className="form-group">
 
-                <button className='btn btn-primary' onClick={saveStudents}>Thêm sinh viên</button>
+                <button className='btn btn-success' onClick={saveStudents}>Thêm sinh viên</button>
             </div>
         </div>
     )

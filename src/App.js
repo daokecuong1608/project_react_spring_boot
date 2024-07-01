@@ -17,9 +17,7 @@ function App() {
         )
 
 
-
     const handleAddStudent = (lastName, firstName) => {
-
         const newStudent = {
             studentId: student.length + 1,
             firstName: firstName,
@@ -36,6 +34,8 @@ function App() {
         setStudent(newStudent)
     }
 
+    const [showForm, setShowForm] = useState(false)
+
     return (
         <div className="App">
             <div className='card'>
@@ -48,7 +48,13 @@ function App() {
                         student={student}
                         deleteStudent={deleteStudent}
                     />
-                    <NewStudentFrom handleAddStudent={handleAddStudent} />
+
+                    <button className='btn btn-primary' onClick={() => setShowForm(!showForm)}>
+                        {showForm ? 'Close form' : 'Add new student'}
+                    </button>
+                    {
+                        showForm && <NewStudentFrom handleAddStudent={handleAddStudent} />
+                    }
                 </div>
 
             </div>
