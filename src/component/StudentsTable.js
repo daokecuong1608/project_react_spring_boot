@@ -12,14 +12,15 @@ function StudentsTable(props) {
                 </tr>
             </thead>
             <tbody>
-                {/* <StudentItem studentId={student[0].studentId} firstName={student[0].firstName} lastName={student[0].lastName} />
-            <StudentItem studentId={student[1].studentId} firstName={student[1].firstName} lastName={student[1].lastName} /> */}
+
                 {
                     props.student.map((student) => (
                         <StudentItem
+                            key={student.studentId}
                             studentId={student.studentId}
                             firstName={student.firstName}
                             lastName={student.lastName}
+                            deleteStudent={props.deleteStudent}
                         />
                     )
                     )

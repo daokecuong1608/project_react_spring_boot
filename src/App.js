@@ -28,6 +28,14 @@ function App() {
         setStudent([...student, newStudent])
     }
 
+
+    const deleteStudent = (studentId) => {
+        //loc theo id de xoa
+        const newStudent = student.filter(student => student.studentId !== studentId)
+        alert('Xoa thanh cong')
+        setStudent(newStudent)
+    }
+
     return (
         <div className="App">
             <div className='card'>
@@ -36,7 +44,10 @@ function App() {
                 </div>
 
                 <div className='card-header'>
-                    <StudentsTable student={student} />
+                    <StudentsTable
+                        student={student}
+                        deleteStudent={deleteStudent}
+                    />
                     <NewStudentFrom handleAddStudent={handleAddStudent} />
                 </div>
 
